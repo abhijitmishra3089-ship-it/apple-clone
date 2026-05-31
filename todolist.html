@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo-list</title>
+</head>
+<body>
+    <h1>Todo list</h1>
+    <input type="text" id="taskinput" placeholder="to-do list">
+    <button id="add">Add</button>
+    <ul id="tasklist">
+        <li>abhijit</li>
+    </ul>
+    <script>
+        const addBtn = document.getElementById('add');
+        const taskInput = document.getElementById('taskinput');
+        const taskList = document.getElementById('tasklist');
+   let task=[];
+   let savetask=JSON.parse(localStorage.getItem("task"))||[];  
+        addBtn.addEventListener('click', () => {
+            const taskText = taskInput.value.trim();
+            if (taskText !== '') {
+                const li = document.createElement('li');
+                li.textContent = taskText;
+                taskList.appendChild(li);
+                taskInput.value = '';
+                task.push(taskText);
+                localStorage.setItem("task",JSON.stringify(task));
+            }
+        });
+
+        savetask.forEach(taskText => {
+            const li = document.createElement('li');
+            li.textContent = taskText;
+            taskList.appendChild(li);
+        });
+
+
+
+    </script>
+</body>
+</html>

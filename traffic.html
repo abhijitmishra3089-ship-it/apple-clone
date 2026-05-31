@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic SamuLatter</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body{
+            background:#1e1e1e;
+            color:white;
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            font-family:Arial,sans-serif;
+        }
+        /* h1{
+            margin-bottom:20px;
+        } */
+        #traffic-light{
+            width:100px;
+            height:300px;
+            background:#2d2d2d;
+            border-radius:20px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:space-around;
+            padding:20px;
+        }
+        .red, .yellow, .green{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            background:#555;
+        }
+        .red.active{
+            background:red;
+        }
+        .yellow.active{
+            background:yellow;
+        }
+        .green.active{
+            background:green;
+        }
+        .controls{
+            margin-top:30px;
+            display:flex;
+            gap:20px;
+
+        }
+        .start,.stop{
+            margin-top:20px;
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+            background:#ff9800;
+            color:black;
+            font-weight:bold;
+            cursor:pointer;
+            display:block;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Traffic SamuLatter</h1> -->
+    <div id="traffic-light">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="green"></div>
+    </div>
+    <div class="controls">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+    </div>
+    <script>
+        const red=document.querySelector(".red");
+        const yellow=document.querySelector(".yellow");
+        const green=document.querySelector(".green");
+        const start=document.querySelector(".start");
+        const stop=document.querySelector(".stop");
+        let curr=0;
+        let intervalId;
+        start.addEventListener("click", () => {     
+            intervalId = setInterval(() => {
+                red.classList.remove("active");
+                yellow.classList.remove("active");
+                green.classList.remove("active");
+                if(curr === 0){
+                    red.classList.add("active");
+                }
+                else if(curr === 1){
+                    yellow.classList.add("active");
+                }
+                else{
+                    green.classList.add("active");
+                }
+                curr++;
+                if(curr > 3){
+                    curr = 0;
+                }
+        }, 500);
+        });
+stop.addEventListener("click", () => {
+clearInterval(intervalId);
+    red.classList.remove("active");
+    yellow.classList.remove("active");
+    green.classList.remove("active");
+});
+    </script>
+</body>
+</html>

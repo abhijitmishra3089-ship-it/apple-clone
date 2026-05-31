@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhijeet Mishra — Full Stack Developer Resume</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f6;
+      padding: 40px 20px;
+      color: #1a1a1a;
+    }
+    .resume {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #e2e2e6;
+      border-radius: 10px;
+      padding: 40px 44px 36px;
+    }
+    .header { border-bottom: 1.5px solid #e2e2e6; padding-bottom: 18px; margin-bottom: 20px; }
+    .name { font-size: 28px; font-weight: 600; color: #111; letter-spacing: -0.4px; }
+    .role-tag {
+      display: inline-block; margin-top: 5px;
+      font-size: 13px; font-weight: 500;
+      background: #EEEDFE; color: #3C3489;
+      padding: 3px 12px; border-radius: 20px;
+    }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
+    .contact-item { display: flex; align-items: center; gap: 5px; font-size: 13px; color: #555; }
+    .contact-item a { color: #555; text-decoration: none; }
+    .contact-item a:hover { color: #3C3489; }
+    section { margin-bottom: 20px; }
+    .section-title {
+      font-size: 10.5px; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: #888;
+      margin-bottom: 10px; padding-bottom: 5px;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .summary-text { font-size: 14px; color: #333; line-height: 1.75; }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-pill {
+      font-size: 12px; padding: 4px 11px;
+      border-radius: 20px; border: 1px solid #e0e0e6;
+      color: #333; background: #f7f7f9;
+    }
+    .skill-pill.highlight { background: #EEEDFE; color: #3C3489; border-color: #AFA9EC; }
+    .entry { margin-bottom: 14px; }
+    .entry-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px; }
+    .entry-title { font-size: 14px; font-weight: 600; color: #111; }
+    .entry-subtitle { font-size: 13px; color: #666; margin-top: 2px; }
+    .entry-date { font-size: 12px; color: #999; white-space: nowrap; }
+    .entry-bullets { margin-top: 7px; padding-left: 18px; }
+    .entry-bullets li { font-size: 13px; color: #333; line-height: 1.65; margin-bottom: 4px; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+    .tech-tag { font-size: 11px; padding: 2px 9px; background: #EAF3DE; color: #3B6D11; border-radius: 20px; }
+    .edu-row { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px; }
+    .edu-meta { margin-top: 5px; font-size: 13px; color: #666; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .resume { border: none; border-radius: 0; padding: 30px 36px; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="resume">
+
+  <div class="header">
+    <div class="name">Abhijeet Mishra</div>
+    <span class="role-tag">Full Stack Developer</span>
+    <div class="contact-row">
+      <div class="contact-item">&#9993; abhijitmishra@gmail.com</div>
+      <div class="contact-item">&#128222; +91 XXXXX XXXXX</div>
+      <div class="contact-item">
+        &#128279; <a href="https://github.com/abhijitmishra3089-ship-it" target="_blank">github.com/abhijitmishra3089</a>
+      </div>
+      <div class="contact-item">
+        &#128279; <a href="https://www.linkedin.com/in/abhijit-mishra-2806j01" target="_blank">linkedin.com/in/abhijit-mishra</a>
+      </div>
+      <div class="contact-item">&#128205; Faizabad, India</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-title">Summary</div>
+    <p class="summary-text">
+      Motivated and detail-oriented fresher full stack developer with hands-on experience building
+      end-to-end web applications using the MERN stack. Passionate about creating scalable,
+      user-friendly products. Quick learner with strong fundamentals in data structures, REST APIs,
+      and modern JavaScript frameworks.
+    </p>
+  </section>
+
+  <section>
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <span class="skill-pill highlight">React.js</span>
+      <span class="skill-pill highlight">Node.js</span>
+      <span class="skill-pill highlight">Express.js</span>
+      <span class="skill-pill highlight">MongoDB</span>
+      <span class="skill-pill">JavaScript (ES6+)</span>
+      <span class="skill-pill">HTML5 &amp; CSS3</span>
+      <span class="skill-pill">REST APIs</span>
+      <span class="skill-pill">Git &amp; GitHub</span>
+      <span class="skill-pill">Redux</span>
+      <span class="skill-pill">Mongoose</span>
+      <span class="skill-pill">JWT Auth</span>
+      <span class="skill-pill">Tailwind CSS</span>
+      <span class="skill-pill">Postman</span>
+      <span class="skill-pill">VS Code</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Projects</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <div class="entry-title">TaskFlow — Project Management App</div>
+          <div class="entry-subtitle">Personal Project &nbsp;&middot;&nbsp;
+            <a href="https://github.com/abhijitmishra3089-ship-it" style="color:#3C3489;">github.com/abhijitmishra3089</a>
+          </div>
+        </div>
+        <div class="entry-date">Jan 2024 – Mar 2024</div>
+      </div>
+      <ul class="entry-bullets">
+        <li>Built a full stack task management app with drag-and-drop boards, user authentication, and real-time updates.</li>
+        <li>Implemented JWT-based auth, protected REST API routes, and role-based access control on the backend.</li>
+        <li>Optimized MongoDB queries using indexing, reducing average API response time by 40%.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Express</span>
+        <span class="tech-tag">MongoDB</span>
+        <span class="tech-tag">JWT</span>
+        <span class="tech-tag">Redux</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <div class="entry-title">ShopEasy — E-commerce Platform</div>
+          <div class="entry-subtitle">Academic Project &nbsp;&middot;&nbsp;
+            <a href="https://github.com/abhijitmishra3089-ship-it" style="color:#3C3489;">github.com/abhijitmishra3089</a>
+          </div>
+        </div>
+        <div class="entry-date">Aug 2023 – Nov 2023</div>
+      </div>
+      <ul class="entry-bullets">
+        <li>Developed a feature-rich e-commerce app with product listing, cart, Razorpay payment integration, and order tracking.</li>
+        <li>Created an admin dashboard for managing inventory, orders, and users with CRUD operations.</li>
+        <li>Deployed backend on Render and frontend on Vercel; used Cloudinary for image storage.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">MongoDB</span>
+        <span class="tech-tag">Razorpay API</span>
+        <span class="tech-tag">Cloudinary</span>
+        <span class="tech-tag">Vercel</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <div class="entry-title">DevBlog — Developer Blogging Platform</div>
+          <div class="entry-subtitle">Personal Project &nbsp;&middot;&nbsp;
+            <a href="https://github.com/abhijitmishra3089-ship-it" style="color:#3C3489;">github.com/abhijitmishra3089</a>
+          </div>
+        </div>
+        <div class="entry-date">May 2023 – Jul 2023</div>
+      </div>
+      <ul class="entry-bullets">
+        <li>Built a markdown-based blogging platform with rich text editor, tags, search, and comment system.</li>
+        <li>Implemented pagination, infinite scroll, and lazy loading for improved performance.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Express</span>
+        <span class="tech-tag">MongoDB</span>
+        <span class="tech-tag">Tailwind CSS</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Education</div>
+    <div class="entry">
+      <div class="edu-row">
+        <div>
+          <div class="entry-title">Bachelor of Computer Applications (BCA)</div>
+          <div class="entry-subtitle">Dr Ram Manohar Lohia University, Faizabad</div>
+        </div>
+        <div class="entry-date">2022 – 2025</div>
+      </div>
+      <div class="edu-meta">Relevant coursework: Data Structures, DBMS, Web Technologies, Software Engineering</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Certifications &amp; Extras</div>
+    <ul class="entry-bullets">
+      <li>The Complete Web Developer Bootcamp — Udemy (2023)</li>
+      <li>MongoDB Basics — MongoDB University (2023)</li>
+      <li>Active open-source contributor on GitHub</li>
+      <li>Solved 200+ problems on LeetCode (focus: arrays, trees, dynamic programming)</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>

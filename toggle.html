@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="active">hello</li>
+        <li>bye</li>
+    </ul>
+   <script>
+      const items = document.querySelectorAll("li");
+items.forEach(item => {
+    items.forEach(li => li.classList.remove("active"));
+    item.classList.add("active");
+  });
+   </script> 
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kanban-board</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#1e1e1e;
+    color:white;
+    min-height:100vh;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.board{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.column{
+    background:#2d2d2d;
+    width:300px;
+    min-height:400px;
+    padding:15px;
+    border-radius:10px;
+}
+
+.column h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.task{
+    background:#ff9800;
+    color:black;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:10px;
+    cursor:grab;
+    font-weight:bold;
+}
+
+ .column.drag-over{
+    border:2px dashed #fff;
+} 
+    </style>
+</head>
+<body>
+    <div class="board">
+
+    <div class="column" id="todo">
+        <h2>To Do</h2>
+
+        <div class="task" draggable="true" id="task1">
+            Learn JavaScript
+        </div>
+
+        <div class="task" draggable="true" id="task2">
+            Build Portfolio
+        </div>
+
+    </div>
+
+    <div class="column" id="progress">
+        <h2>In Progress</h2>
+    </div>
+
+    <div class="column" id="done">
+        <h2>Done</h2>
+    </div>
+
+</div>
+<script>
+    let draggedTask=null;
+    const tasks=document.querySelectorAll('.task');
+    let columns=document.querySelectorAll('.column');
+    tasks.forEach(task=>{
+        task.addEventListener('dragstart',function(e){
+            draggedTask=e.target;
+            //  console.log(draggedTask);
+        })
+    });
+    tasks.forEach(task=>{
+        task.addEventListener('dragend',()=>{
+            draggedTask=null;
+        })
+    })
+    columns.forEach(col=>{
+        col.addEventListener('dragover',function(e){
+            e.preventDefault();
+        });
+        col.addEventListener('drop',(e)=>{
+            if(draggedTask){
+                col.appendChild(draggedTask);
+            }
+        })
+    })
+</script>
+</body>
+</html>
+
+<!-- drag and drop is interaction pattern where users -->
+ <!-- grab an element -->
+  <!-- move it with pointer -->
+   <!-- release it over another area(drop zone) -->
+    <!-- in html this is achieved using the draggable attribute and the drag events -->
+     <!-- mark an element draggeble -->
+      <!-- drag event
+       dragstart,d
+      -->   
