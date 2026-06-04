@@ -120,12 +120,61 @@
 
 
 
-    function promise(a,b) {
-        return new Promise((res,rej)=>{
-            res(a+b);
-        })
-    }
+    // function promise(a,b) {
+    //     return new Promise((res,rej)=>{
+    //         res(a+b);
+    //     })
+    // }
 
-    promise(2,3).then((data)=>{
-        console.log("the sum is:",data)
+    // promise(2,3).then((data)=>{
+    //     console.log("the sum is:",data)
+    // })
+
+
+   function getUser(){
+    return new Promise((resolve, reject)=>{
+        step1((err, result)=>{
+            if(err) reject(err);
+            else resolve(result);
+        })
     })
+}
+
+function getOrders(prev){
+    return new Promise((resolve, reject)=>{
+        step2(prev, (err, result)=>{
+            if(err) reject(err);
+            else resolve(result);
+        })
+    })
+}
+
+
+function getOrderDetails(prev){
+    return new Promise((resolve, reject)=>{
+        step3(prev, (err, result)=>{
+            if(err) reject(err);
+            else resolve(result);
+        })
+    })
+}
+
+function getShipment(prev){
+    return new Promise((resolve, reject)=>{
+        step4(prev, (err, result)=>{
+            if(err) reject(err);
+            else resolve(result);
+        })
+    })
+}
+
+getUser()
+    .then(value1 => getOrders(value1))
+    .then(value2 => getOrderDetails(value2))
+    .then(value3=>getShipment(value3))
+    .then(final => {
+        console.log(final);
+    })
+    .catch(err => {
+        console.error(err);
+    });
