@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f2f2f2;
+    font-family:Arial;
+}
+
+.container{
+    width:350px;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input[type="radio"]{
+    display:none;
+}
+
+.tabs{
+    display:flex;
+}
+
+.tabs label{
+    width:50%;
+    text-align:center;
+    padding:10px;
+    background:#ddd;
+    cursor:pointer;
+}
+
+#login:checked ~ .tabs .login-btn,
+#signup:checked ~ .tabs .signup-btn{
+    background:blue;
+    color:white;
+}
+
+.form{
+    display:none;
+    margin-top:20px;
+}
+
+#login:checked ~ .login-form{
+    display:block;
+}
+
+#signup:checked ~ .signup-form{
+    display:block;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"]{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:blue;
+    color:white;
+    border:none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<input type="radio" name="tab" id="login" checked>
+<input type="radio" name="tab" id="signup" checked>
+
+<div class="tabs">
+    <label for="login" class="login-btn">Login</label>
+    <label for="signup" class="signup-btn">Sign Up</label>
+</div>
+
+<div class="form login-form">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+</div>
+
+<div class="form signup-form">
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Sign Up</button>
+</div>
+
+</div>
+
+</body>
+</html>

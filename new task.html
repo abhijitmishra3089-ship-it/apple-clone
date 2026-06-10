@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #submit{
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;    
+        }
+        .card{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+            .card img{
+                width: 100%;
+                height: auto;
+            }
+
+    </style>
+</head>
+<body>
+    <button id="submit">Submit</button>
+    <div id="facts">book cart</div>
+    <script>
+       async function cartBooks(){
+        const response=await fetch('https://potterapi-fedeperin.vercel.app/en/books');
+        const data =await response.json();
+        // console.log(data);
+        return data
+       }
+    //    cartBooks()
+       async function displayBooks(){
+            const data=await cartBooks();
+        const facts=document.getElementById("facts");
+        facts.textContent = data.map(book => `<div class="card">
+           <img src="${book.cover}" alt="${book.title}">
+            <p>${book.description}</p>
+            <p>${book.index}</p>
+             <p>${book.number}</p>
+           <h3>${book.originalTitle}</h3>
+            <p>${book.pages}</p>
+            <p>${book.releaseDate}</p>
+           <h2>${book.title}</h2>
+            </div>`).join('');
+        }
+       const btn=document.getElementById("submit");
+       btn.addEventListener("click",displayBooks);
+    </script>
+</body>
+</html>
+
